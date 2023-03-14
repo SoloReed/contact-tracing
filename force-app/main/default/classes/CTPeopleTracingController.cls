@@ -44,10 +44,7 @@ public with sharing class CTPeopleTracingController {
                                                     FROM People_Tracing__c
                                                     WHERE Person_1__c IN :personIds
                                                         OR Person_2__c IN :personIds];
-
-        // debugging
-        System.debug('Existing Records: ' + existingRecords);
-        System.debug('Existing Records Size: ' + existingRecords.size());
+                                                        
 
         if(existingRecords != null && existingRecords.size() > 0){
             for (People_Tracing__c trace : existingRecords) {
