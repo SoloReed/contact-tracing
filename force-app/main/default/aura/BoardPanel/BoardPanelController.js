@@ -8,8 +8,6 @@
 
         // set the value of selectedMode attribute
         component.set("v.selectedMode", selectedValue);
-        console.log("The Start New Game button has been clicked! The game mode is " + selectedValue);
-        console.log("The selectedMode Attribute Value is " + component.get("v.selectedMode"));
     },
 
     reshuffleBoard : function(component, event, helper) {
