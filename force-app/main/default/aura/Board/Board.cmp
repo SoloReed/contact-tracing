@@ -6,11 +6,12 @@
     <aura:attribute name="clickCount" type="Integer" default="0" access="private" />
     <aura:attribute name="blockSize" type="Integer" access="private" />
     <aura:attribute name="result" type="String" access="private" />
-    <aura:attribute name="boardDisabled" type="boolean" access="private" />
+    <aura:attribute name="boardDisabled" type="Boolean" access="private" />
 
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
     <!-- <aura:handler name="render" value="{!this}" action="{!c.doRender}" /> -->
     <!-- <aura:handler name="onclick" event="c:BlockClickEvent" action="{!c.blockClickHandler}" /> -->
+    <aura:method name="startGame" action="{!c.doInit}" description="Start New Game"> </aura:method>
 
     <!-- DIV is a container HTML Element, generally used to group subelements. -->
     <div class="board">

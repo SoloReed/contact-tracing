@@ -25,6 +25,8 @@
         // get win word
         const winWord = helper.getWinWord(words);
         component.set("v.winWord", winWord);
+        // reset the board
+        helper.resetBoard(component);
     },
 
     doRender: function (component, event, helper) {

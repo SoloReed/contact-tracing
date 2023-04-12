@@ -23,7 +23,7 @@
             </lightning:layoutItem>
             <aura:if isTrue="{! (v.selectedMode != null)}">
                 <lightning:layoutItem size="12">
-                    <c:Board mode="{!v.selectedMode}"></c:Board>
+                    <c:Board aura:id="boardComp" mode="{!v.selectedMode}"></c:Board>
                 </lightning:layoutItem>
             </aura:if>
         </lightning:layout>
