@@ -1,0 +1,27 @@
+<aura:component controller="CTRecentChangesController">
+    <!-- attributes -->
+    <aura:attribute name="data" type="List" />
+    <aura:attribute name="columns" type="List" />
+    <aura:attribute name="issearching" type="Boolean" default="false" />
+    <aura:attribute name="headerTitle" type="String" default="Person View" />
+    <aura:attribute name="initialResponse" type="List" />
+
+    <!-- handlers-->
+    <aura:handler name="init" value="{! this }" action="{! c.doInit }" />
+
+    <lightning:card title="Recent Updates">
+        <aura:set attribute="actions">
+            <!-- Search Input Field -->
+            <div onkeyup="{! c.handleKeyUp }">
+                <lightning:input aura:id="enter-search" name="search" label="Hit 'enter' to search"
+                    isLoading="{! v.issearching}" type="search" placeholder="Search here..." />
+            </div>
+        </aura:set>
+
+        <div class="slds-var-p-around_medium">
+            <lightning:datatable keyField="id" data="{! v.data }" columns="{! v.columns }" hideCheckboxColumn="true"
+                onrowaction="{! c.handleRowAction }" />
+        </div>
+
+    </lightning:card>
+</aura:component>

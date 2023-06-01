@@ -1,0 +1,42 @@
+<aura:component implements="force:appHostable">
+
+    <aura:attribute name="headerTitle" type="String" default="Person View" />
+
+    <div class="container">
+        <lightning:layout multipleRows="true">
+            <lightning:layoutItem size="12">
+                <c:CTHealthHeader headerTitle="{!v.headerTitle}" aura:id="health-header"></c:CTHealthHeader>
+            </lightning:layoutItem>
+
+            <lightning:layoutItem size="12">
+                <!-- Vertical Tabs Starts -->
+                <lightning:tabset onselect="{!c.tabSelectHandler}" variant="vertical">
+                    <lightning:tab label="Person View" id="person">
+                        <!-- Content in Person View -->
+                        <lightning:layout>
+                            <lightning:layoutItem size="8" padding="horizontal-small">
+                                <c:CTRecentChanges headerTitle="Person View" />
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="4" padding="horizontal-small">
+                                <c:CTPersonView />
+                            </lightning:layoutItem>
+                        </lightning:layout>
+
+                    </lightning:tab>
+                    <lightning:tab label="Location View" id="location">
+                        <!-- Content in Location View -->
+                        <lightning:layout>
+                            <lightning:layoutItem size="8" padding="horizontal-small">
+                                <c:CTRecentChanges headerTitle="Location View" />
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="4" padding="horizontal-small">
+                                <c:CTLocationView />
+                            </lightning:layoutItem>
+                        </lightning:layout>
+                    </lightning:tab>
+                </lightning:tabset>
+                <!-- Vertical Tabs Ends -->
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+</aura:component>
